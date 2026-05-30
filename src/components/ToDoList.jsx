@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import useLocalStorage from "./use-local-storage";
-
+import useLocalStorage from "../use-local-storage";
 
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
@@ -21,12 +20,11 @@ const TodoList = () => {
           };
         }
         return todo;
-      })
+      }),
     );
   };
   return (
     <div>
-      <h1>Todo List App</h1>
       <form onSubmit={handleAddNewTodo}>
         <input
           type="text"
