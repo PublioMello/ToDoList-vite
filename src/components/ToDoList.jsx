@@ -23,6 +23,10 @@ const TodoList = () => {
       }),
     );
   };
+  const handleRemoveTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div>
       <form onSubmit={handleAddNewTodo}>
@@ -43,7 +47,7 @@ const TodoList = () => {
               onChange={() => handleToggleTodo(todo)}
             />
             {todo.text}
-            {/* <button>Remove</button> */}
+            <button onClick={() => handleRemoveTodo(todo.id)}>Remove</button>
           </li>
         ))}
       </ul>

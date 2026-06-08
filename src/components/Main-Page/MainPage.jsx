@@ -6,6 +6,7 @@ import { FaCheckSquare } from "react-icons/fa";
 import { IoTrashBin } from "react-icons/io5";
 
 const MainPage = () => {
+  // const removeItem =
   return (
     <div className="full-page">
       <div className="left-part">
@@ -35,8 +36,10 @@ const MainPage = () => {
         </div>
       </div>
       <div className="right-part">
-        <h2>Todo List</h2>
-        <TodoList />
+        <div className="todo-card">
+          <h2>Todo List</h2>
+          <TodoList />
+        </div>
       </div>
     </div>
   );

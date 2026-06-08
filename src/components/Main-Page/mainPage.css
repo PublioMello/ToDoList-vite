@@ -1,15 +1,17 @@
 .full-page {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   background-color: #f6f5fd;
+  min-height: 85vh;
+  padding: 40px 60px;
+  gap: 40px;
 }
 .left-part {
   display: flex;
+  flex: 0.9;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px;
+  gap: 30px;
+  /* justify-content: center; */
+  padding: 40px;
 }
 
 .left-part_items {
@@ -33,5 +35,25 @@
 }
 
 .right-part {
-  background-color: white;
+  display: flex;
+  flex: 1.1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-card {
+  background: white;
+  width: 100%;
+  max-width: 550px;
+  min-height: 700px;
+  border-radius: 32px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(81, 72, 247, 0.08);
+}
+
+.todo-card h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
 }
