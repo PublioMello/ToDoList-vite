@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import useLocalStorage from "../use-local-storage";
+import "./ToDo.css";
 
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
@@ -36,7 +37,9 @@ const TodoList = () => {
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <button type="submit">Add</button>
+        <button type="submit" className="add-button">
+          Add
+        </button>
       </form>
       <ul>
         {todos.map((todo) => (
@@ -47,7 +50,12 @@ const TodoList = () => {
               onChange={() => handleToggleTodo(todo)}
             />
             {todo.text}
-            <button onClick={() => handleRemoveTodo(todo.id)}>Remove</button>
+            <button
+              onClick={() => handleRemoveTodo(todo.id)}
+              className="remove-button"
+            >
+              Remove
+            </button>
           </li>
         ))}
       </ul>
