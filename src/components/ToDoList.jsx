@@ -12,17 +12,13 @@ const TodoList = () => {
     setNewTodo("");
   };
   const handleToggleTodo = (todoToToggle) => {
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === todoToToggle.id) {
-          return {
-            ...todoToToggle,
-            done: !todoToToggle.done,
-          };
-        }
-        return todo;
-      }),
-    );
+    const toggled = { ...todoToToggle, done: !todoToToggle.done };
+    const rest = todos.filter((todo) => todo.id !== todoToToggle.id);
+    if (toggled.done) {
+      setTodos([...rest, toggled]);
+    } else {
+      setTodos([toggled, ...rest]);
+    }
   };
   const handleRemoveTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
