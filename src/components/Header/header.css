@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #f6f5fd;
+  padding: 10px;
+}
+
+.header__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.header__text-icon {
+  font-size: 32px;
+  color: #493ff7;
+}
+.header__text_title {
+  font: 32px;
+  color: #040941;
+}
+.header__text_title span {
+  color: #443cf7;
+}
