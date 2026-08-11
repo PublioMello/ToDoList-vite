@@ -1,5 +1,3 @@
-import React from "react";
-import TodoList from "./components/ToDoList";
 import Header from "./components/Header/Header";
 import MainPage from "./components/Main-Page/MainPage";
 

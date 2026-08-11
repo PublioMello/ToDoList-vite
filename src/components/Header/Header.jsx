@@ -1,4 +1,3 @@
-import React from "react";
 import "./header.css";
 import { FaCheckSquare } from "react-icons/fa";
 const Header = () => {

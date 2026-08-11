@@ -1,4 +1,3 @@
-import React from "react";
 import TodoList from "../ToDoList";
 import "./mainPage.css";
 import { IoMdAddCircle } from "react-icons/io";
