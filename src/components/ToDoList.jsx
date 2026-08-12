@@ -6,10 +6,17 @@ import "./ToDo.css";
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useLocalStorage("todolist", []);
+  const [error, setError] = useState("");
   const handleAddNewTodo = (e) => {
     e.preventDefault();
+    if (newTodo.length < 3) {
+      setError("minimo 3 characteres");
+      return;
+    }
+
     setTodos([...todos, { id: uuidv4(), text: newTodo, done: false }]);
     setNewTodo("");
+    setError("");
   };
   const handleToggleTodo = (todoToToggle) => {
     const toggled = { ...todoToToggle, done: !todoToToggle.done };
@@ -27,12 +34,19 @@ const TodoList = () => {
   return (
     <div>
       <form onSubmit={handleAddNewTodo}>
-        <input
-          type="text"
-          placeholder="Add a new todo"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-        />
+        <div className="todo-input-group">
+          <input
+            type="text"
+            placeholder="Add a new todo"
+            value={newTodo}
+            onChange={(e) => {
+              setNewTodo(e.target.value);
+              setError("");
+            }}
+          />
+          {error && <span className="todo-error">{error}</span>}
+        </div>
+
         <button type="submit" className="add-button">
           Add
         </button>
@@ -45,7 +59,7 @@ const TodoList = () => {
               checked={todo.done}
               onChange={() => handleToggleTodo(todo)}
             />
-            {todo.text}
+            <span className="todo-text">{todo.text}</span>
             <button
               onClick={() => handleRemoveTodo(todo.id)}
               className="remove-button"
